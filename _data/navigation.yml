@@ -1,16 +1,28 @@
 # main links links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "Linked Name Authority"
+    url: /lna
 
-  - title: "About"
-    url: https://mmistakes.github.io/minimal-mistakes/
-
-  - title: "Sample Posts"
-    url: https://mmistakes.github.io/minimal-mistakes/year-archive/
-
-  - title: "Sample Pages"
-    url: https://mmistakes.github.io/minimal-mistakes/page-archive/
-
-  - title: "Sample Collections"
-    url: https://mmistakes.github.io/minimal-mistakes/collection-archive/
+lna_techdocs:
+  - title: Getting Started
+    children:
+      - title: "Start Guide"
+        url: /lna/techdocs/getting_started
+  - title: Installation and Deployment Details
+    children:
+      - title: "Development Environment"
+        url: /lna/techdocs/development_environment
+      - title: "Environment Variables"
+        url: /lna/techdocs/environment_variables
+      - title: "QA/Production Deployment"
+        url: /lna/techdocs/deployment
+  - title: Technical Specifications
+    children:
+      - title: "Data Model"
+        url: /lna/techdocs/model
+      - title: "API via Apiary"
+        url: http://docs.linkednameauthority.apiary.io/
+  - title: Other
+    children:
+      - title: "Change Event Logic"
+        url: /lna/techdocs/change_event_logic

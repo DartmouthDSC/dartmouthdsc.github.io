@@ -7,15 +7,15 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Dartmouth DSC Documentation"
 title_separator          : "-"
-name                     : "Your Name"
+name                     : "Dartmouth DSC"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : true # false (default)
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "facebook", "google-plus", custom"
@@ -204,3 +204,30 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# Collections
+collections:
+  lna:
+    output: true
+    permalink: /:collection/:path
+
+# Defaults
+defaults:
+  # all
+  - scope:
+      path: ""
+    values:
+      layout: single
+      comments: false
+      author_profile: false
+  # _lna/techdocs
+  - scope:
+      path: "_lna/techdocs"
+      type: lna
+    values:
+      layout: single
+      read_time: false
+      share: false
+      kind: techdoc
+      sidebar:
+        nav: "lna_techdocs"
