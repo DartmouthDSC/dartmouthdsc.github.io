@@ -38,3 +38,7 @@ server:
     children:
       - title: "After Cloning"
         url: after_cloning
+  - title: Help
+    children:
+      - title: "Solr and Fedora out of sync"
+        url: solr_fedora_out_of_sync
