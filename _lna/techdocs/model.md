@@ -2,8 +2,6 @@
 title: Model
 ---
 
-(Include picture of model)
+The model can also be viewed in [google docs](https://docs.google.com/drawings/d/1V-ygGkSNPWcpoGa0EiMVijBP0tQsKrRNEDqqrTSvE5M/edit?usp=sharing). The google doc link is the most accurate.
 
-Our model can also be viewed in google docs:
-https://docs.google.com/drawings/d/1V-ygGkSNPWcpoGa0EiMVijBP0tQsKrRNEDqqrTSvE5M/edit?usp=\
-sharing
+![image-center](/images/lna_model.svg){: .align-center}

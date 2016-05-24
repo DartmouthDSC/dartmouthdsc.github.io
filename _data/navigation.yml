@@ -8,33 +8,33 @@ main:
 lna_techdocs:
   - title: Getting Started
     children:
-      - title: "Start Guide"
-        url: /lna/techdocs/getting_started
+      - title: "Step by Step Guide"
+        url: step_by_step_guide
       - title: "Application Requirements"
-        url: /lna/techdocs/application_requirements
+        url: application_requirements
+      - title: "Environment Variables"
+        url: environment_variables
   - title: Installation and Deployment Details
     children:
       - title: "Installation Guide"
-        url: /lna/techdocs/installation_guide
-      - title: "Environment Variables"
-        url: /lna/techdocs/environment_variables
+        url: installation_guide
       - title: "Development Environment"
-        url: /lna/techdocs/development_environment
+        url: development_environment
       - title: "QA/Production Deployment"
-        url: /lna/techdocs/deployment
+        url: deployment
   - title: Technical Specifications
     children:
       - title: "Data Model"
-        url: /lna/techdocs/model
+        url: model
       - title: "API via Apiary"
         url: http://docs.linkednameauthority.apiary.io/
   - title: Other
     children:
       - title: "Change Event Logic"
-        url: /lna/techdocs/change_event_logic
+        url: change_event_logic
 
 server:
   - title: Installing
     children:
       - title: "After Cloning"
-        url: /server/after_cloning
+        url: after_cloning
