@@ -3,39 +3,29 @@ title: Getting Started
 kind: techdoc
 ---
 
-This is a generalized guide on how to setup the Linked Name Authority. There are many ways to setup your environment, this guide is meant to provide some guidence but it is by no means the only way to setup the environment. For specifics about Dartmouth's implementation, please visit the [techdocs](/lna/techdocs).
-
-## Application Requirements
-
-### Ruby (+ RVM or another ruby version manager)
-RubyGems?
-
-### Fedora
-We deploy Fedora using Jetty 9.
-
-### Solr
-We have only tested this application using Solr 5.
-
-### Apache + Passenger (or another web server capable of deploying Rails applications)
-
-### Postgres 
-
-If you do not want to use postgres, update the database configuration in XXXX
+This is a generalized guide on how to setup the Linked Name Authority. There are many ways to setup your environment, this guide is meant to provide some guidence but it is by no means the only way to setup the environment. For specifics about Dartmouth's installation, please visit the [installation guide](/lna/techdocs/installation_guide).
 
 
-## Run the application with fcrepo_wrapper and solr_wrapper
+# Running the application in development with fcrepo_wrapper and solr_wrapper
 
 
-## Run the application in development
 
-### clone git repository
+# Run the application in production
 
-### Add environment variables
+After all the [application requirements](application_requirements) are met, getting the application started should be similar to starting any rails application.
 
-### Install bundler
+### Clone git repository
 
-### Bundler install
-install without oracle if you are not using oracle
+### Add Environment Variables
+
+### Install Bundler
+
+### Bundler Install
+Install all dependent gems, if you are using Oracle in your installation do not add the `-without` flag shown below.
+
+```
+bundle install --without oracle
+```
 
 
 

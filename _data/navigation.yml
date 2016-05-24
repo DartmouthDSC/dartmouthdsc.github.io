@@ -2,18 +2,24 @@
 main:
   - title: "Linked Name Authority"
     url: /lna
+  - title: "Server Configuration"
+    url: /server
 
 lna_techdocs:
   - title: Getting Started
     children:
       - title: "Start Guide"
         url: /lna/techdocs/getting_started
+      - title: "Application Requirements"
+        url: /lna/techdocs/application_requirements
   - title: Installation and Deployment Details
     children:
-      - title: "Development Environment"
-        url: /lna/techdocs/development_environment
+      - title: "Installation Guide"
+        url: /lna/techdocs/installation_guide
       - title: "Environment Variables"
         url: /lna/techdocs/environment_variables
+      - title: "Development Environment"
+        url: /lna/techdocs/development_environment
       - title: "QA/Production Deployment"
         url: /lna/techdocs/deployment
   - title: Technical Specifications
@@ -26,3 +32,9 @@ lna_techdocs:
     children:
       - title: "Change Event Logic"
         url: /lna/techdocs/change_event_logic
+
+server:
+  - title: Installing
+    children:
+      - title: "After Cloning"
+        url: /server/after_cloning

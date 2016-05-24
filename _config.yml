@@ -145,6 +145,43 @@ kramdown:
   enable_coderay: false
 
 
+# Collections
+collections:
+  lna:
+    output: true
+    permalink: /:collection/:path
+  server:
+    output: true
+    permalink: /:collection/:path
+
+
+# Defaults
+defaults:
+  # all
+  - scope:
+      path: ""
+    values:
+      layout: single
+      comments: false
+      author_profile: false
+      share: false
+      read_time: false
+  # _lna/techdocs
+  - scope:
+      path: "_lna/techdocs"
+      type: lna
+    values:
+      sidebar:
+        nav: "lna_techdocs"
+  - scope:
+       path: ""
+       type: server
+    values:
+       sidebar:
+         nav: "server"
+       
+
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -204,30 +241,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-# Collections
-collections:
-  lna:
-    output: true
-    permalink: /:collection/:path
-
-# Defaults
-defaults:
-  # all
-  - scope:
-      path: ""
-    values:
-      layout: single
-      comments: false
-      author_profile: false
-  # _lna/techdocs
-  - scope:
-      path: "_lna/techdocs"
-      type: lna
-    values:
-      layout: single
-      read_time: false
-      share: false
-      kind: techdoc
-      sidebar:
-        nav: "lna_techdocs"
