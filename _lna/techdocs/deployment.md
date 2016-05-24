@@ -1,36 +1,38 @@
 ---
-title: Deploying to QA
+title: QA/Production Deployment
 ---
-
 ## Overview
-Capistrano 3.x is used to deploy the application. The application is deployed at `/opt/deploy/LinkedNameAuthority` and is served to the public at at qa.dac.dartmouth.edu/lna. On QA, Capistrano deploys the `develop` branch. If the application has been deployed, before you can skip to step 2.
+Capistrano 3.x is used to deploy the application. 
+
+The application is deployed at `/opt/deploy/LinkedNameAuthority`. On **qa.dac.dartmouth.edu**, Capistrano deploys the `develop` branch and the application is served to the public at at qa.dac.dartmouth.edu/lna. On **lna.dartmouth.edu**, Capistrano deploys the `master` branch and is served to the public at lna.dartmouth.edu. If the application has been deployed, before you can skip to step 2.
 
 ## Instructions
-1. If this is the first time deploying to qa, **on qa.dac**
-   - Create empty folders at:
+The instructions for deploying to qa or production are identical. 
+
+1. If this is the first time deploying to qa/production, **on qa.dac/lna**
+   - Create an empty folder at:
 
       ```
       /opt/deploy/LinkedNameAuthority/shared
-      /opt/deploy/LinkedNameAuthority/shared/db
       ```
-   - Create a file called `.env` in `/opt/deploy/LinkedNameAuthority/shared` with necessary environment variables. See 'Environment Variables' section below for a list of required variables.
+   - Create a file called `.env` in `/opt/deploy/LinkedNameAuthority/shared` with necessary environment variables. See [Environment Variables](/lna/techdocs/environment_variables) for a list of required variables.
 
 2. From your **development machine** run:
 
    ```
-   bundle exec cap qa deploy
+   bundle exec cap [qa|production] deploy
    ```
 
-   This will checkout the `develop` branch of the application, run any migrations, compile assets, write the crontab and restart apache. 
+   This will checkout the `develop` or `master` branch of the application, run any migrations, compile assets, write the crontab and restart apache. 
 
-3. If this is the first time deploying to qa, and you would like to load all the data without waiting for the cron job run:
-
-   ```
-   bundle exec cap qa deploy:load_data
-   ```
-
-4. If this is the first time deploying to qa, you will probably want to seed the db, with basic roles and privilages for the developers.
+3. If this is the first time deploying to qa/production, and you would like to load all the data without waiting for the cron job run:
 
    ```
-   bundle exec cap qa deploy:seed_db
+   bundle exec cap [qa|production] deploy:load_data
+   ```
+
+4. If this is the first time deploying to qa/production, you will probably want to seed the db, with basic roles and privilages for the developers.
+
+   ```
+   bundle exec cap [qa|production] deploy:seed_db
    ```
