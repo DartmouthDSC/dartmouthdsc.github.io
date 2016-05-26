@@ -42,3 +42,5 @@ server_configuration:
     children:
       - title: "Solr and Fedora out of sync"
         url: /server_configuration/solr_fedora_out_of_sync
+      - title: "Deleting Solr and Fedora"
+        url: /server_configuration/deleting_solr_and_fedora

@@ -6,7 +6,7 @@ title: Installation Guide
 _Note: This guide is specific to Dartmouth's implementation._
 
 
-This page describes the installation process for the servers/applications needed for most of the applications we run. The following were installed on our pre-production(qa) server:
+This page describes the installation process for the servers/applications needed for most of the applications we run. The following were installed on our qa server:
 	
 ## Apache 2.2
 *Note: This already came installed on our VM.*
@@ -14,13 +14,15 @@ This page describes the installation process for the servers/applications needed
 Changed `chkconfig` to be `345 99 01` in `/etc/init.d/httpd` because Apache should be the last thing to start up and the first thing to shut down. 
 	
 After changing chkconfig run:
+
 ``` bash
 sudo chkconfig --del httpd
 sudo chkconfig --add httpd
 ```
 	
-### Apache Modules Added
-#### Passenger
+## Apache Modules Added
+
+### Passenger
 Need to install from tarball because RPM is not up to date on the latest packages.
 Instructions here: 
 <https://www.phusionpassenger.com/library/install/apache/install/oss/tarball/>
@@ -36,17 +38,18 @@ Because we are running a Red Hat VM, the service script needs some special comme
 These slight variations from the quick start guide are described here:
 <http://vincentvandaal.nl/271/redis-quick-install-on-redhat-based-distro/>
 	
-Change `chkconfig` to be `345 95 05`. After changing chkconfig run:
+Change `chkconfig` to be `345 95 05`. After changing `chkconfig`, delete the previously set run levels and set the new levels. Run:
 
 ```bash
 sudo chkconfig --del redis_6379
 sudo chkconfig --add redis_6379
 ```
-*(`chkconfig --del` needs to be run first in order to delete the previously set run levels, unexpected results happen if not used.)*
+**Warning!** Unexpected results can happen if the previous run levels are not deleted first. Make sure to delete the previous run levels.
+{: .notice--danger}
 	
 Redis is at port 6379.
 	
-## Jetty 9.1.2
+## Jetty 9.x.x
 Followed these instructions for Jetty installation: 
 <http://www.eclipse.org/jetty/documentation/9.1.2.v20140210/startup-unix-service.html>
 	
@@ -56,7 +59,7 @@ Fedora requires the jsp module, so be sure to add it to the list of modules need
 	
 `sudo java -jar /opt/jetty/jetty-distribution-9.2.10.v20150310/start.jar --add-to-start=deploy,http,logging,jsp`
 	
-The Jetty service script provides default run levels, these should probably be updated to be more accurate and set to our specific needs. Currently, they are set to 345 90 10. After run levels are updated, run this command to set the default run levels:
+The Jetty service script provides default run levels, these should probably be updated to be more accurate and set to our specific needs. Currently, they are set to `345 90 10`. After run levels are updated, run this command to set the default run levels:
 
 ```bash
 sudo chkconfig --del jetty
@@ -64,11 +67,11 @@ sudo chkconfig --add jetty
 ```
 Jetty is at port 8080.
 	
-## Fedora 4.2.0
+## Fedora 4.x.x
 Followed these instructions for Fedora installation: 
 <https://wiki.duraspace.org/display/FEDORA40/Deploying+Fedora+4+Complete+Guide>
 	
-*Note that the default webapps directory changed in Jetty 9.*
+__Note that the default webapps directory changed in Jetty 9.__
 	
 #### Adding WAR file and updating fedora.xml
 The Fedora WAR file can simply be dropped in `/opt/fedora`. The `fedora.xml` file in `/usr/local/dac-conf/jetty-webapps` should be updated to point at the new WAR file. Then, run `sudo make` in that directory to move the edited xml file into `/opt/web/mybase/webapps/fedora.xml`
@@ -98,8 +101,8 @@ Fedora is a webapp deployed from within Jetty, so its also at port 8080.
 		 
 Fedora path is `localhost:8080/fedora/rest`.
 		  
-## Solr 5.3.1
-Installing Solr 5.3.1 in production: <https://cwiki.apache.org/confluence/display/solr/Taking+Solr+to+Production>
+## Solr 5.x.x
+Installing Solr 5.x.x in production: <https://cwiki.apache.org/confluence/display/solr/Taking+Solr+to+Production>
 		  
 Run levels are set up in the Solr service script using LSB-style, currently we don’t have the modules installed to read this style, so the following lines have to be added to the beginning of the script in order to set up the right run levels and order:
 		  
@@ -119,5 +122,3 @@ sudo chkconfig --add jetty
 ```
 
 Solr is at port 8983.
-
-
