@@ -2,7 +2,7 @@
 title: Application Requirements
 ---
 
-This is a generalized guide there are many ways to setup your environment, this guide is meant to provide some guidence but it is by no means the only way to setup the environment. For specifics about Dartmouth's installation, please visit the [installation guide](/lna/techdocs/installation_guide).
+This is a generalized guide there are many ways to setup your environment, this guide is meant to provide some guidence but it is by no means the only way to setup the environment. For specifics about Dartmouth's installation, please visit the [installation guide](/server_configuration/installation_guide).
 
 # Application Requirements
 

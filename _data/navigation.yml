@@ -31,7 +31,7 @@ lna_technical_documentation:
       - title: "Change Event Logic"
         url: /lna/technical_documentation/change_event_logic
       - title: "Adding Authentication"
-        url: /lna/techdocs/adding_authentication
+        url: /lna/technical_documentation/adding_authentication
 
 server_configuration:
   - title: Installing

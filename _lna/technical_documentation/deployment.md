@@ -1,6 +1,8 @@
 ---
 title: QA/Production Deployment
 ---
+Note: This configuration is specific to the qa/production environment at Dartmouth.
+
 ## Overview
 Capistrano 3.x is used to deploy the application. 
 
