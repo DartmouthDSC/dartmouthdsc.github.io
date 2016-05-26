@@ -1,7 +1,8 @@
 ---
 title: QA/Production Deployment
 ---
-Note: This configuration is specific to the qa/production environment at Dartmouth.
+**Note** This configuration is specific to the qa/production environment at Dartmouth.
+{: .notice--info} 
 
 ## Overview
 Capistrano 3.x is used to deploy the application. 
@@ -17,7 +18,7 @@ The instructions for deploying to qa or production are identical.
       ```
       /opt/deploy/LinkedNameAuthority/shared
       ```
-   - Create a file called `.env` in `/opt/deploy/LinkedNameAuthority/shared` with necessary environment variables. See [Environment Variables](/lna/techdocs/environment_variables) for a list of required variables.
+   - Create a file called `.env` in `/opt/deploy/LinkedNameAuthority/shared` with necessary environment variables. See [Environment Variables](/lna/technical_documentation/environment_variables) for a list of required variables.
 
 2. From your **development machine** run:
 

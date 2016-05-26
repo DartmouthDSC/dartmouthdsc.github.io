@@ -2,11 +2,12 @@
 title: Setting up your development environment
 ---
 
-_Note: This configuration is specific to the development environment at Dartmouth._
+**Note** This configuration is specific to the development environment at Dartmouth.
+{: .notice--info}
 
 1. Oracle and Postgres requires setting environment variables in `~/.bash_profile`. Add this to that file before running bundle install:
 
-   ``` bash     
+   ``` bash
    # Oracle Definitions.
    export ORACLE_BASE=/usr/lib/oracle
    export ORACLE_HOME=$ORACLE_BASE/12.1/client64
@@ -24,36 +25,39 @@ _Note: This configuration is specific to the development environment at Dartmout
 2. Install all gem dependencies:
 
    ```shell
-   bundle install
+   $ bundle install
    ```
-   Note: If running in *production* use `bundle install --without development test ci`
+   **Note** If running in *production* use `bundle install --without development test ci`
+   {: .notice--warning}
 
 3. Once everything is installed, sync the db:
 
    ```
-   rake db:migrate
+   $ rake db:migrate
    ```
 
-4. Set environment variables in `.env` (You may need to create a new file). See [Environment Variables](/lna/techdocs/environment_variables) for a description of variables needed.
+4. Set environment variables in `.env` (You may need to create a new file). See [Environment Variables](environment_variables) for a description of variables needed.
 
 5. Load organizations, people (faculty) and documents:
 
    ```
-   rake load:all
+   $ rake load:all
    ```
    
 6. To write crontab:
 
    ```
-   whenever -w
+   $ whenever -w
    ```
    
-   **Note:** This will write the crontab under the current user running this command. 
+   **Note** This will write the crontab under the current user running this command. 
+   {: .notice--warning}
 
-   **Note:** If you would like the commands in the crontab to run in a different environment than `development`, either use the `--set` flag avaliable in `whenever` or set the rails environment before running the command `RAILS_ENV=qa whenever -w`.
+   **Note** If you would like the commands in the crontab to run in a different environment than `development`, either use the `--set` flag avaliable in `whenever` or set the rails environment before running the command `RAILS_ENV=qa whenever -w`.
+   {: .notice--warning}
 
-7. To seed db (with roles and privilages for developers):
+7. To seed db (with roles and privilages for developers and other admins):
 
    ```
-   rake db:seed
+   $ rake db:seed
    ```
