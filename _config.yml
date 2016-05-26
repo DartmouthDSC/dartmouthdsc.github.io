@@ -150,7 +150,7 @@ collections:
   lna:
     output: true
     permalink: /:collection/:path
-  server:
+  server_configuration:
     output: true
     permalink: /:collection/:path
 
@@ -166,19 +166,20 @@ defaults:
       author_profile: false
       share: false
       read_time: false
-  # _lna/techdocs
+  # _lna/techical_documentation
   - scope:
-      path: "_lna/techdocs"
+      path: "_lna/technical_documentation"
       type: lna
     values:
       sidebar:
-        nav: "lna_techdocs"
+        nav: "lna_technical_documentation"
+  # _server_configuration
   - scope:
        path: ""
-       type: server
+       type: server_configuration
     values:
        sidebar:
-         nav: "server"
+         nav: "server_configuration"
        
 
 

@@ -3,42 +3,42 @@ main:
   - title: "Linked Name Authority"
     url: /lna
   - title: "Server Configuration"
-    url: /server
+    url: /server_configuration
 
-lna_techdocs:
+lna_technical_documentation:
   - title: Getting Started
     children:
       - title: "Step by Step Guide"
-        url: step_by_step_guide
+        url: /lna/technical_documentation/step_by_step_guide
       - title: "Application Requirements"
-        url: application_requirements
+        url: /lna/technical_documentation/application_requirements
       - title: "Environment Variables"
-        url: environment_variables
+        url: /lna/technical_documentation/environment_variables
   - title: Installation and Deployment Details
     children:
-      - title: "Installation Guide"
-        url: installation_guide
       - title: "Development Environment"
-        url: development_environment
+        url: /lna/technical_documentation/development_environment
       - title: "QA/Production Deployment"
-        url: deployment
+        url: /lna/technical_documentation/deployment
   - title: Technical Specifications
     children:
       - title: "Data Model"
-        url: model
+        url: /lna/technical_documentation/model
       - title: "API via Apiary"
         url: http://docs.linkednameauthority.apiary.io/
   - title: Other
     children:
       - title: "Change Event Logic"
-        url: change_event_logic
+        url: /lna/technical_documentation/change_event_logic
+      - title: "Adding Authentication"
+        url: /lna/techdocs/adding_authentication
 
-server:
+server_configuration:
   - title: Installing
     children:
-      - title: "After Cloning"
-        url: after_cloning
+      - title: "Installation Guide"
+        url: /server_configuration/installation_guide
   - title: Help
     children:
       - title: "Solr and Fedora out of sync"
-        url: solr_fedora_out_of_sync
+        url: /server_configuration/solr_fedora_out_of_sync
