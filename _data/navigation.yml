@@ -28,6 +28,8 @@ lna_technical_documentation:
         url: http://docs.linkednameauthority.apiary.io/
   - title: Other
     children:
+      - title: "Loaders"
+        url: /lna/technical_documentation/loaders
       - title: "Change Event Logic"
         url: /lna/technical_documentation/change_event_logic
       - title: "Adding Authentication"

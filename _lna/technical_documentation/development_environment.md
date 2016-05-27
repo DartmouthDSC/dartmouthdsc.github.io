@@ -36,7 +36,7 @@ title: Setting up your development environment
    $ rake db:migrate
    ```
 
-4. Set environment variables in `.env` (You may need to create a new file). See [Environment Variables](environment_variables) for a description of variables needed.
+4. Set environment variables in `.env` (a new file may need to be created). See [Environment Variables](environment_variables) for a description of variables needed.
 
 5. Load organizations, people (faculty) and documents:
 
