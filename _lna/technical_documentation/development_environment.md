@@ -14,10 +14,10 @@ title: Setting up your development environment
 
    export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib:$LD_LIBRARY_PATH
    export PATH=$PATH:/usr/lib/oracle/12.1/client64/bin
-    
+
    # Sets Characters Oracle is using.
    export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1
-    
+
    # Adding Postgresql commands to PATH.
    export PATH=$PATH:/usr/pgsql-9.5/bin
    ```
@@ -43,20 +43,20 @@ title: Setting up your development environment
    ```
    $ rake load:all
    ```
-   
+
 6. To write crontab:
 
    ```
    $ whenever -w
    ```
-   
-   **Note** This will write the crontab under the current user running this command. 
+
+   **Note** This will write the crontab under the current user running this command.
    {: .notice--warning}
 
-   **Note** If you would like the commands in the crontab to run in a different environment than `development`, either use the `--set` flag avaliable in `whenever` or set the rails environment before running the command `RAILS_ENV=qa whenever -w`.
+   **Note** If you would like the commands in the crontab to run in a different environment than `development`, either use the `--set` flag available in `whenever` or set the rails environment before running the command `RAILS_ENV=qa whenever -w`.
    {: .notice--warning}
 
-7. To seed db (with roles and privilages for developers and other admins):
+7. To seed db (with roles and privileges for developers and other admins):
 
    ```
    $ rake db:seed

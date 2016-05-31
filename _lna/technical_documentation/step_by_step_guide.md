@@ -6,7 +6,6 @@ title: Step-by-Step Guide
 This guide covers getting up the Linked Name Authority in  a development or production environment.
 
 ## Setting up development environment
-For the purposes of this guide we are using [fcrepo\_wrapper](https://github.com/cbeer/fcrepo_wrapper) and [solr\_wrapper](https://github.com/cbeer/solr_wrapper) to run Solr and Fedora.
 
 ### 1. Install Ruby, RVM, and Git
 If not already installed, use these [instructions](http://installfest.railsbridge.org/installfest/) to install Ruby, RVM, Rails and Git.
@@ -18,18 +17,10 @@ In a directory of your choosing run:
 $ git clone git@github.com:DartmouthDSC/LinkedNameAuthority.git
 ```
 
-### 3. Add `.env` File
-Create a `.env` at the root of the app directory with any environment variables necessary. More information about environment variables can be found [here](environment_variables).
+### 3. If necessary, add `.env` file
+Initially none of the ENV variables described are necessary, if you are using the loaders, Elements, Oracle or Postgresql then the corresponding ENV variables may be necessary. To add ENV variables, create a `.env` at the root of the app directory with any environment variables necessary. More information about environment variables can be found [here](environment_variables). 
 
-### 4. Install All Gems
-Install all dependent gems, if you are using Oracle in your installation do not add the `-without` flag shown below.
-
-```
-$ gem bundler install
-$ bundle install --without oracle
-```
-
-### 5. Change Development DB Configuration
+### 4. Change Development DB Configuration
 Because most development environments don't run Postgresql databases update the contents in `config/database.yml` to reflect the following configuration for development.
 
 ``` yaml
@@ -40,9 +31,34 @@ development:
   database: db/development.sqlite3
 ```
 
-### 6. Run fcrepo_wrapper and solr_wrapper
+And add the sqlite3 gem. In the application's `Gemfile` add the following line:
 
+```
+gem 'sqlite3'
+```
 
+### 5. Install All Gems
+Install all dependent gems, if you are using Oracle in your installation do not add the `-without` flag shown below.
+
+```
+$ gem install bundler
+$ bundle install --without oracle pg
+```
+
+### 6. Run Solr and Fedora
+For the purposes of this guide, we are using [fcrepo\_wrapper](https://github.com/cbeer/fcrepo_wrapper) and [solr\_wrapper](https://github.com/cbeer/solr_wrapper) to run Solr and Fedora.
+
+Open a new terminal and cd into the application directory, then run the following command to run Solr:
+
+```
+solr_wrapper
+```
+
+Open another new terminal and cd into the application directory, then run the following command to run Fedora:
+
+```
+fcrepo_wrapper
+```
 
 ### 7. Run Migrations
 
@@ -50,6 +66,14 @@ development:
 $ rake db:migrate
 ```
 
+### 8. Run Rails Server
+In another terminal cd into the application directory and run:
+
+```
+rails server
+```
+
+In a web browser go to `localhost:3000/` and the application should be running.
 
 ## Setting up production environment
 

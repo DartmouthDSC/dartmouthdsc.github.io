@@ -30,8 +30,8 @@ lna_technical_documentation:
     children:
       - title: "Loaders"
         url: /lna/technical_documentation/loaders
-      - title: "Change Event Logic"
-        url: /lna/technical_documentation/change_event_logic
+      - title: "Change Event"
+        url: /lna/technical_documentation/change_event
       - title: "Adding Authentication"
         url: /lna/technical_documentation/adding_authentication
 
