@@ -1,6 +1,10 @@
 ---
 title: Adding Authentication
 ---
+
+**Note** This information is specific to the implementation at Dartmouth.
+{: .notice--info}
+
 Instructions for adding Dartmouth web authentication using Devise and the omniauth-cas gem to a Hydra Head.
 
 ## Basic Instructions

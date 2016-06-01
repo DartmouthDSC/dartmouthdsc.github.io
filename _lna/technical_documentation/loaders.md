@@ -1,8 +1,11 @@
 ---
 title: Loaders
 ---
+**Note** This information is specific to the implementation at Dartmouth.
+{: .notice--info}
+
 ## Introduction
-There are series of classes that are responsible for loading employees, organizations and documents into the Linked Name Authority. Each type of resource has its own class that inherits from the main loader class. Each class as a generalized instance method usually called something like `into_lna` that takes a hash with the information about one particular resource. Each class also has class methods that load the data from a particular source, these methods are usually called something like `from_oracle_table`.
+There are series of classes that are responsible for loading employees, organizations and documents into the Linked Name Authority. Each type of resource has its own class that inherits from the main loader class. Each class has a generalized instance method usually called something like `into_lna` that takes a hash with the information about one particular resource. Each class also has class methods that load the data from a particular source, these methods are usually called something like `from_oracle_table`.
 
 The order resource types are loaded into the LNA is really important because a person must have an organization and documents must be related to a person. Therefore, the order of a load should be as follows:
 
