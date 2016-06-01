@@ -20,7 +20,7 @@ $ git clone git@github.com:DartmouthDSC/LinkedNameAuthority.git
 ### 3. If necessary, add `.env` file
 Initially none of the ENV variables described are necessary, if you are using the loaders, Cron, Elements, Oracle or Postgresql then the corresponding ENV variables may be necessary. To add ENV variables, create a `.env` file at the root of the app directory with any environment variables necessary. More information about LNA specific environment variables can be found [here](environment_variables).
 
-### 4. Changes Development Configuration
+### 4. Change Development Configuration
 Because most development environments don't run Postgresql databases, update the contents in `config/database.yml` to reflect the following configuration for development.
 
 ``` yaml
@@ -129,7 +129,7 @@ Now, add a document(work) to a person's collection:
 doc = Lna::Collection::Document.create!(collection: person.collections.first, title: 'Unicorns and Magic', author_list: ['Jane Doe'])
 ```
 
-### 10. Checkout the API
+### 10. Browse the API
 At <http://localhost:3000/persons.jsonld> you should see a record for the person you created. If you append `.jsonld` to the URI listed as the `@id` and visit the webpage you should see the membership and the account you just created for this person. An example is shown below:
 
 ``` json

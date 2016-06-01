@@ -5,7 +5,7 @@ title: Setting up your development environment
 **Note** This configuration is specific to the development environment at Dartmouth.
 {: .notice--info}
 
-1. Oracle and Postgres requires setting environment variables in `~/.bash_profile`. Add this to that file before running bundle install:
+1. Oracle and Postgres require setting environment variables in `~/.bash_profile`. Add this to that file before running bundle install:
 
    ``` bash
    # Oracle Definitions.

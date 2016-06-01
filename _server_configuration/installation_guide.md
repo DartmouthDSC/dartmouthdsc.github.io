@@ -5,8 +5,7 @@ title: Installation Guide
 
 _Note: This guide is specific to Dartmouth's implementation._
 
-
-This page describes the installation process for the servers/applications needed for most of the applications we run. The following were installed on our qa server:
+This page describes the installation process for the servers/applications needed by most of the rails applications we run. The following are installed on our qa server:
 
 ## Apache 2.2
 *Note: This already came installed on our VM.*
