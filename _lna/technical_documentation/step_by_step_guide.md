@@ -20,7 +20,7 @@ $ git clone git@github.com:DartmouthDSC/LinkedNameAuthority.git
 ### 3. If necessary, add `.env` file
 Initially none of the ENV variables described are necessary, if you are using the loaders, Elements, Oracle or Postgresql then the corresponding ENV variables may be necessary. To add ENV variables, create a `.env` at the root of the app directory with any environment variables necessary. More information about environment variables can be found [here](environment_variables). 
 
-### 4. Change Development DB Configuration
+### 4. Change Development Configuration
 Because most development environments don't run Postgresql databases update the contents in `config/database.yml` to reflect the following configuration for development.
 
 ``` yaml
@@ -35,6 +35,22 @@ And add the sqlite3 gem. In the application's `Gemfile` add the following line:
 
 ```
 gem 'sqlite3'
+```
+
+Change development fedora path in `config/fedora/yml` to 
+
+```
+development:
+  user: fedoraAdmin
+  password: fedoraAdmin
+  url: http://127.0.0.1:8080/rest
+  base_path: /lna-dev		
+```
+
+Turn off ssl in `config/environments/development.rb' by setting:
+
+```
+config.force_ssl = false
 ```
 
 ### 5. Install All Gems
