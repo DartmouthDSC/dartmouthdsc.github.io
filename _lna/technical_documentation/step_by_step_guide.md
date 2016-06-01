@@ -3,7 +3,7 @@ title: Step-by-Step Guide
 ---
 {% include toc title="Guide" %}
 
-This guide covers getting up the Linked Name Authority in  a development or production environment.
+This guide covers running the Linked Name Authority in a development or production environment. In this guide, we try to skip over any requirements that are specific to the Dartmouth implementation of the Linked Name Authority.
 
 ## Setting up development environment
 
@@ -11,17 +11,17 @@ This guide covers getting up the Linked Name Authority in  a development or prod
 If not already installed, use these [instructions](http://installfest.railsbridge.org/installfest/) to install Ruby, RVM, Rails and Git.
 
 ### 2. Clone Git Repository
-In a directory of your choosing run:
+In a directory of your choosing clone the repository:
 
 ```
 $ git clone git@github.com:DartmouthDSC/LinkedNameAuthority.git
 ```
 
 ### 3. If necessary, add `.env` file
-Initially none of the ENV variables described are necessary, if you are using the loaders, Elements, Oracle or Postgresql then the corresponding ENV variables may be necessary. To add ENV variables, create a `.env` at the root of the app directory with any environment variables necessary. More information about environment variables can be found [here](environment_variables).
+Initially none of the ENV variables described are necessary, if you are using the loaders, Cron, Elements, Oracle or Postgresql then the corresponding ENV variables may be necessary. To add ENV variables, create a `.env` file at the root of the app directory with any environment variables necessary. More information about LNA specific environment variables can be found [here](environment_variables).
 
-### 4. Change Development Configuration
-Because most development environments don't run Postgresql databases update the contents in `config/database.yml` to reflect the following configuration for development.
+### 4. Changes Development Configuration
+Because most development environments don't run Postgresql databases, update the contents in `config/database.yml` to reflect the following configuration for development.
 
 ``` yaml
 development:
@@ -31,13 +31,13 @@ development:
   database: db/development.sqlite3
 ```
 
-And add the sqlite3 gem. In the application's `Gemfile` add the following line:
+Add the sqlite3 gem, by adding the following line to the application's `Gemfile`:
 
 ```
 gem 'sqlite3'
 ```
 
-Change development fedora path in `config/fedora/yml` to
+Change development fedora path in `config/fedora.yml` from `http://127.0.0.1:8080/fedora/rest` to `http://127.0.0.1:8080/rest`
 
 ```
 development:
@@ -47,14 +47,14 @@ development:
   base_path: /lna-dev		
 ```
 
-Turn off ssl in `config/environments/development.rb' by setting:
+Turn off ssl in `config/environments/development.rb' by setting the following flag to false:
 
 ```
 config.force_ssl = false
 ```
 
 ### 5. Install All Gems
-Install all dependent gems, if you are using Oracle in your installation do not add the `-without` flag shown below.
+Install all dependent gems, if you are using Oracle or Postgresql in your installation do not remove the required gems by using the `-without` flag shown below.
 
 ```
 $ gem install bundler
@@ -91,10 +91,11 @@ rails server
 
 In a web browser go to <http://localhost:3000/> and the application should be running.
 
-**Note** Currently, dartmouth cas authentication is required to see the html pages. This authentication has to be removed or visit use the API to see the data stored.
+**Note** Currently, Dartmouth CAS authentication is required to see the html pages. In order to see these pages, authentication has to be removed or disabled. Instead, you can see the information stored by using the API (we'll cover this a later).
+{: .notice--warning}
 
 ### 9. Create LNA objects
-Open a console to create objects for the application, run `rails c`.
+Open a console to create records for the application, run `rails c`.
 
 Because every person must be related to an organization, create an organization:
 
@@ -108,28 +109,28 @@ Now, add a person:
 person = Lna::Person.create!(full_name: 'Jane Doe', given_name: 'Jane', family_name: 'Doe', primary_org: org)
 ```
 
-Now, add a membership to person:
+Now, add a membership to the person:
 
 ``` ruby
 
 membership = Lna::Membership.create!(title: 'Chair of the Department', begin_date: Date.today, organization: org, person: person)
 ```
 
-Now, add an account to person:
+Now, add an account to the person:
 
 ``` ruby
 account = Lna::Account.create!(title: 'Dartmouth', account_name: 'd0000a', account_service_homepage: 'dartmouth.edu', account_holder: person)
 
 ```
 
-Now, add a document(work) to a person's collection"
+Now, add a document(work) to a person's collection:
 
 ``` ruby
 doc = Lna::Collection::Document.create!(collection: person.collections.first, title: 'Unicorns and Magic', author_list: ['Jane Doe'])
 ```
 
 ### 10. Checkout the API
-At <http://localhost:3000/persons.jsonld> you should see a record for the person you created. If append `.jsonld` to the URI listed as the @id and visit the webpage you should see the membership and the account you just created for this person.
+At <http://localhost:3000/persons.jsonld> you should see a record for the person you created. If you append `.jsonld` to the URI listed as the `@id` and visit the webpage you should see the membership and the account you just created for this person. An example is shown below:
 
 ``` json
 {
@@ -202,7 +203,7 @@ At <http://localhost:3000/persons.jsonld> you should see a record for the person
 }
 ```
 
-At <http://localhost:3000/organizations.jsonld> you see see a record for the organization created.
+At <http://localhost:3000/organizations.jsonld> you see see a record for the organization created. An example is shown below:
 
 ``` json
 {

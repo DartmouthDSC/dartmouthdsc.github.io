@@ -1,8 +1,8 @@
 ---
 title: Documentation for Dartmouth DSC Projects
 ---
-
-**(site is still a work in progress)**
+**Note** This site is still a work in progress.
+{: .notice--danger}
 
 Click on a project to see user and technical documentation.
 
