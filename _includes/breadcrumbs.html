@@ -35,7 +35,7 @@
       {% endfor %}
 		
       {% if forloop.last %}
-        <li class="current">{{ page.title }}</li>
+        <li class="current"> {{ page.title }}</li>
       {% else %}
         {% assign i = i | plus: 1 %}
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
