@@ -25,3 +25,10 @@ The employee loader, `Load::People.from_hr`, reads in data from an HRMS Oracle v
 
 ## Document Loader
 The document loader, `Load::Documents.from_elements` reads data from the Symplectic Elements API. It queries for all the users that have been updated since the last load, then imports any publications that have not previously been loaded. Essentially, each document is only loaded once--any changes made in Elements will not be picked up by the LNA.
+
+## Using the Loaders
+The LNA's load task to load people, organizations and documents is [here](https://github.com/DartmouthDSC/LinkedNameAuthority/blob/develop/lib/tasks/load.rake).
+
+If there are errors running a load, or if the load is in a weird state re-running the load might  work. But more often than not you will probably want to delete the Import record created by the previously failed load.
+
+If you want a clean slate, you will also need to [delete fedora and solr](server_configuration/deleting_solr_and_fedora). To delete the entire sql database, run `rake db:reset`.

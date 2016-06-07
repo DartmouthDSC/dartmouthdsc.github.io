@@ -24,7 +24,7 @@ lna_technical_documentation:
     children:
       - title: "Data Model"
         url: /lna/technical_documentation/model
-      - title: "API via Apiary"
+      - title: "API via Apiary <i class=\"fa fa-external-link-square\" aria-hidden=\"true\"></i>"
         url: http://docs.linkednameauthority.apiary.io/
   - title: Other
     children:
@@ -40,6 +40,12 @@ server_configuration:
     children:
       - title: "Installation Guide"
         url: /server_configuration/installation_guide
+  - title: Maintenance
+    children:
+      - title: "hydra-conf <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
+        url: https://github.com/DartmouthDSC/hydra-conf
+      - title: "Update Guide <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
+        url: https://github.com/DartmouthDSC/hydra-conf/blob/master/UPDATE_GUIDE.md
   - title: Help
     children:
       - title: "Solr and Fedora out of sync"
