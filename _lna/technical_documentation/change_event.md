@@ -21,9 +21,9 @@ Major changes in organizations are being tracked by an object called, change eve
 
 ## How To Make Changes in Organizations
 
-A change event can be trigged by using `Lna::Organization::ChangeEvent.trigger_event`.
+A change event can be trigged by using [Lna::Organization::ChangeEvent.trigger_event](https://github.com/DartmouthDSC/LinkedNameAuthority/blob/master/app/models/lna/organization/change_event.rb)
 
-An organization can be made historic by using `Lna::Organization.convert_to_historic`.
+An organization can be made historic by using [Lna::Organization.convert_to_historic](https://github.com/DartmouthDSC/LinkedNameAuthority/blob/master/app/models/lna/organization.rb).
 
 ## Pseudo Code Examples
 **Note** In all these examples, orgs are active unless otherwise stated.
