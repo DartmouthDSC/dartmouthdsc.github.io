@@ -31,4 +31,4 @@ The LNA's load task to load people, organizations and documents is [here](https:
 
 If there are errors running a load, or if the load is in a weird state re-running the load might  work. But more often than not you will probably want to delete the Import record created by the previously failed load.
 
-If you want a clean slate, you will also need to [delete fedora and solr](server_configuration/deleting_solr_and_fedora). To delete the entire sql database, run `rake db:reset`.
+If you want a clean slate, you will also need to [delete fedora and solr](/server_configuration/deleting_solr_and_fedora). To delete the entire sql database, run `rake db:reset`.

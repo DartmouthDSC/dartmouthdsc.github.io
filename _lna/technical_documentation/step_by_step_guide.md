@@ -47,9 +47,9 @@ development:
   base_path: /lna-dev		
 ```
 
-Turn off ssl in `config/environments/development.rb' by setting the following flag to false:
+Turn off ssl in `config/environments/development.rb` by setting the following flag to false:
 
-```
+``` ruby
 config.force_ssl = false
 ```
 
@@ -67,13 +67,13 @@ For the purposes of this guide, we are using [fcrepo\_wrapper](https://github.co
 Open a new terminal and cd into the application directory, then run the following command to run Solr:
 
 ```
-solr_wrapper
+$ solr_wrapper
 ```
 
 Open another new terminal and cd into the application directory, then run the following command to run Fedora:
 
 ```
-fcrepo_wrapper
+$ fcrepo_wrapper
 ```
 
 ### 7. Run Migrations
@@ -86,7 +86,7 @@ $ rake db:migrate
 In another terminal cd into the application directory and run:
 
 ```
-rails server
+$ rails server
 ```
 
 In a web browser go to <http://localhost:3000/> and the application should be running.

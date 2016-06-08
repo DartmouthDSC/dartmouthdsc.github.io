@@ -42,19 +42,19 @@ server_configuration:
         url: /server_configuration/installation_guide
   - title: Maintenance
     children:
-      - title: "hydra-conf <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
-        url: https://github.com/DartmouthDSC/hydra-conf
       - title: "Update Guide <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
         url: https://github.com/DartmouthDSC/hydra-conf/blob/master/UPDATE_GUIDE.md
   - title: Configuration
     children:
+      - title: "hydra-conf <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
+        url: https://github.com/DartmouthDSC/hydra-conf
       - title: "Solr Config <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
         url: https://github.com/DartmouthDSC/hydra-conf/blob/master/solr/README.md
       - title: "Apache Config <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
         url: https://github.com/DartmouthDSC/hydra-conf/blob/master/apache2/README.md
   - title: Help
     children:
-      - title: "Solr and Fedora out of sync"
+      - title: "Solr and Fedora out of Sync"
         url: /server_configuration/solr_fedora_out_of_sync
       - title: "Deleting Solr and Fedora"
         url: /server_configuration/deleting_solr_and_fedora
