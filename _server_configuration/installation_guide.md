@@ -3,7 +3,8 @@ title: Installation Guide
 ---
 {% include toc %}
 
-_Note: This guide is specific to Dartmouth's implementation._
+**Note** This guide is specific to Dartmouth's implementation.
+{: .notice--info}
 
 This page describes the installation process for the servers/applications needed by most of the rails applications we run. The following are installed on our qa server:
 

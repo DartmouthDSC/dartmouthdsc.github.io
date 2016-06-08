@@ -52,6 +52,8 @@ server_configuration:
         url: https://github.com/DartmouthDSC/hydra-conf/blob/master/solr/README.md
       - title: "Apache Config <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
         url: https://github.com/DartmouthDSC/hydra-conf/blob/master/apache2/README.md
+      - title: "Service Scripts <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"
+        url: https://github.com/DartmouthDSC/hydra-conf/blob/master/init.d/README.md
   - title: Help
     children:
       - title: "Solr and Fedora out of Sync"
