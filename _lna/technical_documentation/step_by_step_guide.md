@@ -14,7 +14,7 @@ If not already installed, use these [instructions](http://installfest.railsbridg
 In a directory of your choosing clone the repository:
 
 ```
-$ git clone git@github.com:DartmouthDSC/LinkedNameAuthority.git
+$ git clone https://github.com/DartmouthDSC/LinkedNameAuthority.git
 ```
 
 ### 3. If necessary, add `.env` file
