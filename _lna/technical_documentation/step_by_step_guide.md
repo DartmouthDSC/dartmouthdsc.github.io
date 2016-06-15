@@ -37,16 +37,6 @@ Add the sqlite3 gem, by adding the following line to the application's `Gemfile`
 gem 'sqlite3'
 ```
 
-Change development fedora path in `config/fedora.yml` from `http://127.0.0.1:8080/fedora/rest` to `http://127.0.0.1:8080/rest`
-
-```
-development:
-  user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://127.0.0.1:8080/rest
-  base_path: /lna-dev		
-```
-
 Turn off ssl in `config/environments/development.rb` by setting the following flag to false:
 
 ``` ruby
