@@ -1,4 +1,4 @@
-# Technical Documentation for Dartmouth DSC
+# Documentation for Dartmouth DSC Projects
 
 [![Build Status](https://travis-ci.org/DartmouthDSC/dartmouthdsc.github.io.svg?branch=master)](https://travis-ci.org/DartmouthDSC/dartmouthdsc.github.io)
 
