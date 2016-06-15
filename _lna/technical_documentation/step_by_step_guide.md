@@ -66,6 +66,9 @@ Open another new terminal and cd into the application directory, then run the fo
 $ fcrepo_wrapper
 ```
 
+**Note** Fedora 4 requires Java 8, please check your Java version if you get errors.
+{: .notice--warning}
+
 ### 7. Run Migrations
 
 ```
